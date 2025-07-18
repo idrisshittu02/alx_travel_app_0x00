@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Listing
+from .models import Listing, Booking, Review
 
 class ListingSerializer(serializers.ModelSerializer):
     class Meta:
@@ -8,12 +8,12 @@ class ListingSerializer(serializers.ModelSerializer):
 
 class BookingSerializer(serializers.ModelSerializer):
     listing = ListingSerializer(read_only=True)
-    
+
     class Meta:
-        model = Listing
+        model = Booking
         fields = '__all__'
 
 class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Listing
+        model = Review
         fields = '__all__'
