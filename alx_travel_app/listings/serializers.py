@@ -1,13 +1,7 @@
 from rest_framework import serializers
-from .models import Listing, Booking
+from .models import TestModel
 
-
-class ListingSerializer(serializers.ModelSerializer):
+class TestModelSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Listing
-        fields = '__all__'
-
-class BookingSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Booking
-        fields = '__all__'
+        model = TestModel
+        fields = '__all__'   # This will include all fields in the model
